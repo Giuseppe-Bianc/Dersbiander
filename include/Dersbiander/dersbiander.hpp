@@ -1,15 +1,11 @@
-#ifndef SAMPLE_LIBRARY_HPP
-#define SAMPLE_LIBRARY_HPP
+#pragma once
 
-#include <Dersbiander/dersbiander_lib_export.hpp>
-
-[[nodiscard]] DERSBIANDER_LIB_EXPORT int factorial(int) noexcept;
-
-[[nodiscard]] constexpr int factorial_constexpr(int input) noexcept
-{
-  if (input == 0) { return 1; }
-
-  return input * factorial_constexpr(input - 1);
-}
-
-#endif
+// clang-format off
+#include "headers.hpp"
+#include "Log.hpp"
+#include "Timer.hpp"
+#include "macros.hpp"
+#include "not_null.hpp"
+#include "Instruction.hpp"
+#include "Tokenizer.hpp"
+// clang-format on
