@@ -1,4 +1,4 @@
-#include <Dersbiander/sample_library.hpp>
+#include <Dersbiander/dersbiander.hpp>
 
 int factorial(int input) noexcept
 {

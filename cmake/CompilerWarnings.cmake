@@ -34,6 +34,7 @@ function(
         /w14905 # wide string literal cast to 'LPSTR'
         /w14906 # string literal cast to 'LPWSTR'
         /w14928 # illegal copy-initialization; more than one user-defined conversion has been implicitly applied
+        /wd4996 # Compatibility with C++98
         /permissive- # standards conformance mode for MSVC compiler.
     )
   endif()
@@ -112,4 +113,7 @@ function(
               $<$<COMPILE_LANGUAGE:C>:${PROJECT_WARNINGS_C}>
               # Cuda warnings
               $<$<COMPILE_LANGUAGE:CUDA>:${PROJECT_WARNINGS_CUDA}>)
+  if(MSVC)
+    target_link_options(${project_name} INTERFACE "/DEBUG")
+  endif()
 endfunction()

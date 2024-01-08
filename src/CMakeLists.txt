@@ -1,2 +1,2 @@
-add_subdirectory(sample_library)
-add_subdirectory(ftxui_sample)
+add_subdirectory(dersbiander_lib)
+add_subdirectory(dersbiander)

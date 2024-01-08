@@ -1,6 +1,6 @@
 #include <catch2/catch_test_macros.hpp>
 
-#include <Dersbiander/sample_library.hpp>
+#include <Dersbiander/dersbiander.hpp>
 
 TEST_CASE("Factorials are computed with constexpr", "[factorial]")
 {
