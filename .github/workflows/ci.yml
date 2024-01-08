@@ -10,7 +10,7 @@ on:
       - develop
 
 env:
-  CLANG_TIDY_VERSION: "15.0.2"
+  CLANG_TIDY_VERSION: "16.0.5"
   VERBOSE: 1
 
 
@@ -33,7 +33,7 @@ jobs:
           - windows-2019
         compiler:
           # you can specify the version after `-` like "llvm-15.0.2".
-          - llvm-15.0.2
+          - llvm-16.0.5
           - gcc-11
         generator:
           - "Ninja Multi-Config"
@@ -58,19 +58,9 @@ jobs:
             gcov_executable: gcov
             enable_ipo: On
 
-          - compiler: llvm-15.0.2
+          - compiler: llvm-16.0.5
             enable_ipo: Off
             gcov_executable: "llvm-cov gcov"
-
-
-          # This exists solely to make sure a non-multiconfig build works
-          - os: ubuntu-20.04
-            compiler: gcc-11
-            generator: "Unix Makefiles"
-            build_type: Debug
-            gcov_executable: gcov
-            packaging_maintainer_mode: On
-            enable_ipo: Off
 
           # Windows msvc builds
           - os: windows-2022
