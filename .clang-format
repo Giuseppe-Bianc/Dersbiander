@@ -1,98 +1,109 @@
-AccessModifierOffset: -2
-AlignAfterOpenBracket: DontAlign
+# Format Style Options - Created with Clang Power Tools
+---
+AccessModifierOffset: -4
+AlignAfterOpenBracket: Align
 AlignConsecutiveAssignments: false
 AlignConsecutiveDeclarations: false
-AlignEscapedNewlines: Left
+AlignEscapedNewlines: Right
 AlignOperands: true
-AlignTrailingComments: false
+AlignTrailingComments: true
 AllowAllParametersOfDeclarationOnNextLine: false
 AllowShortBlocksOnASingleLine: true
 AllowShortCaseLabelsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: All
 AllowShortIfStatementsOnASingleLine: true
 AllowShortLoopsOnASingleLine: true
-AlwaysBreakAfterDefinitionReturnType: None
-AlwaysBreakAfterReturnType: None
-AlwaysBreakBeforeMultilineStrings: true
-AlwaysBreakTemplateDeclarations: false
-BinPackArguments: false
-BinPackParameters: false
-BraceWrapping:
+BraceWrapping: 
+  AfterCaseLabel: false
   AfterClass: true
   AfterControlStatement: false
   AfterEnum: false
   AfterFunction: true
-  AfterNamespace: false
+  AfterNamespace: true
   AfterObjCDeclaration: false
-  AfterStruct: true
+  AfterStruct: false
   AfterUnion: false
+  AfterExternBlock: false
   BeforeCatch: false
   BeforeElse: false
   IndentBraces: false
   SplitEmptyFunction: false
-  SplitEmptyNamespace: true
-  SplitEmptyRecord: true
+  SplitEmptyRecord: false
+  SplitEmptyNamespace: false
+  BeforeLambdaBody: false
+  BeforeWhile: false
 BreakAfterJavaFieldAnnotations: true
-BreakBeforeBinaryOperators: NonAssignment
-BreakBeforeBraces: Custom
-BreakBeforeInheritanceComma: true
-BreakBeforeTernaryOperators: true
-BreakConstructorInitializers: BeforeColon
-BreakConstructorInitializersBeforeComma: false
-BreakStringLiterals: true
-ColumnLimit: 120
+
+ColumnLimit: 130
 CommentPragmas: '^ IWYU pragma:'
-CompactNamespaces: false
+CompactNamespaces: true
 ConstructorInitializerAllOnOneLineOrOnePerLine: false
 ConstructorInitializerIndentWidth: 2
-ContinuationIndentWidth: 2
-Cpp11BracedListStyle: false
+Cpp11BracedListStyle: true
 DerivePointerAlignment: false
 DisableFormat: false
-ExperimentalAutoDetectBinPacking: true
 FixNamespaceComments: true
-ForEachMacros:
-- foreach
-- Q_FOREACH
-- BOOST_FOREACH
-IncludeCategories:
-- Priority: 2
-  Regex: ^"(llvm|llvm-c|clang|clang-c)/
-- Priority: 3
-  Regex: ^(<|"(gtest|gmock|isl|json)/)
-- Priority: 1
-  Regex: .*
-IncludeIsMainRegex: (Test)?$
+ForEachMacros: 
+  - foreach
+  - Q_FOREACH
+  - BOOST_FOREACH
+IncludeBlocks: Preserve
+IncludeCategories: 
+  - Regex: '^"(llvm|llvm-c|clang|clang-c)/'
+    Priority: 2
+    SortPriority: 0
+    CaseSensitive: false
+  - Regex: '^(<|"(gtest|gmock|isl|json)/)'
+    Priority: 3
+    SortPriority: 0
+    CaseSensitive: false
+  - Regex: '.*'
+    Priority: 1
+    SortPriority: 0
+    CaseSensitive: false
+IncludeIsMainRegex: ([-_](test|unittest))?$
+Language: Cpp
+IndentCaseBlocks: true
 IndentCaseLabels: false
-IndentWidth: 2
-IndentWrappedFunctionNames: true
+IndentWidth: 4
+IndentWrappedFunctionNames: false
 JavaScriptQuotes: Leave
 JavaScriptWrapImports: true
-KeepEmptyLinesAtTheStartOfBlocks: true
-Language: Cpp
+KeepEmptyLinesAtTheStartOfBlocks: false
 MacroBlockBegin: ''
 MacroBlockEnd: ''
-MaxEmptyLinesToKeep: 2
-NamespaceIndentation: Inner
-ObjCBlockIndentWidth: 7
-ObjCSpaceAfterProperty: true
-ObjCSpaceBeforeProtocolList: false
+MaxEmptyLinesToKeep: 1
+NamespaceIndentation: All
+PenaltyBreakAssignment: 200
+PenaltyBreakBeforeFirstCallParameter: 1
+PenaltyBreakComment: 300
+PenaltyBreakFirstLessLess: 120
+PenaltyBreakString: 1000
+PenaltyExcessCharacter: 1000000
+PenaltyReturnTypeOnItsOwnLine: 200
 PointerAlignment: Right
 ReflowComments: true
 SortIncludes: true
-SortUsingDeclarations: false
+SortUsingDeclarations: true
 SpaceAfterCStyleCast: false
-SpaceAfterTemplateKeyword: false
+SpaceAfterTemplateKeyword: true
 SpaceBeforeAssignmentOperators: true
-SpaceBeforeParens: ControlStatements
+SpaceBeforeParens: Never
 SpaceInEmptyParentheses: false
-SpacesBeforeTrailingComments: 0
+SpacesBeforeTrailingComments: 2
 SpacesInAngles: false
-SpacesInCStyleCastParentheses: false
 SpacesInContainerLiterals: true
+SpacesInCStyleCastParentheses: false
 SpacesInParentheses: false
 SpacesInSquareBrackets: false
-Standard: c++20
-TabWidth: 8
+Standard: Auto
+TabWidth: 4
+UseCRLF: true
 UseTab: Never
-
+WhitespaceSensitiveMacros: 
+  - STRINGIZE
+  - PP_STRINGIZE
+  - BOOST_PP_STRINGIZE
+  - NS_SWIFT_NAME
+  - CF_SWIFT_NAME
+... 

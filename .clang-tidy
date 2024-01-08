@@ -6,6 +6,8 @@ Checks: "*,
         -fuchsia-*,
         -google-*,
         -llvm*,
+        -clang-diagnostic-error,
+        -bugprone-exception-escape,
         -modernize-use-trailing-return-type,
         -zircon-*,
         -readability-else-after-return,
@@ -13,6 +15,14 @@ Checks: "*,
         -readability-avoid-const-params-in-decls,
         -cppcoreguidelines-non-private-member-variables-in-classes,
         -misc-non-private-member-variables-in-classes,
+        -cert-err58-cpp
+        -misc-const-correctness
+        -readability-implicit-bool-conversion,-warnings-as-errors
+        -readability-convert-member-functions-to-static
+        -clang-diagnostic-switch
+        -readability-simplify-boolean-expr
+        -concurrency-mt-unsafe
+        -cppcoreguidelines-pro-bounds-pointer-arithmetic
 "
 WarningsAsErrors: ''
 HeaderFilterRegex: ''
@@ -20,9 +30,9 @@ FormatStyle:     none
 
 CheckOptions:
   - key: readability-identifier-length.IgnoredVariableNames
-    value: 'x|y|z'
+    value: 'x|y|z,i,c'
   - key: readability-identifier-length.IgnoredParameterNames
-    value: 'x|y|z'
+    value: 'x|y|z,i,c'
 
 
 
